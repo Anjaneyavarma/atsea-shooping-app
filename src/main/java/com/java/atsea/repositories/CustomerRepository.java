@@ -21,7 +21,6 @@ public interface CustomerRepository extends MongoRepository<Customer, String> {
 	Customer findByName(String name);
 
 	// adding find by username
-//	@Query("SELECT c FROM Customer c WHERE c.username = :userName")
 	@Query("{'username' : ?0}")
 	Customer findByUserName(String username);
 	
